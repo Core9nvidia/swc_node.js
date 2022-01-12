@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            float:right;
+        }
+        nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(156, 150, 150);
+        }
+
+        li a {
+            color: rgba(255, 255, 255, 0.644);
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+            text-decoration: none;
+        }
+        #items{
+            margin-right: 40px;
+        }
+        #name{
+            color: rgba(255, 255, 255, 0.644);
+            text-align: center;
+            padding: 14px 16px;
+            margin-left: 20px;
+            text-decoration: none;
+            float:left;
+            font-size: larger;
+        }
+        .container{
+            margin-left: 60px;
+            margin-right: 60px;
+            margin-top:60px;
+            font-size: large;
+            align-items: center;
+        }
+        #title{
+            margin-bottom: 0;
+
+        }
+        #element1 {display:inline-block;margin-right:10px;} 
+        #element2 {display:inline-block;} 
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div id="name" >DAILY JOURNAL</div>
+        <div id="items" class="flex">
+            <ul>
+                <li><a href='/'>HOME</a></li>
+                <li><a href='/about'>ABOUT US</a></li>
+                <li><a href='/contact'>CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <% if(blogs.length > 0){ %>
+            <% blogs.forEach(blog=>{ %>
+                    <h2 id="title"><%= blog.title %></h2>
+                    <% var str=blog.body; %>
+                    <% var str1=str.substring(0,100); %>
+                    <% str1+="..."; %>
+                    <div id="ele">
+                        <p id="element1"><%= str1 %></p>
+                        <a href="/blog/<%= blog._id %> " id="element2">Read More</a>
+                    </div>
+                    
+         <% }) %>
+        <% }else{  %>
+            <p>No blogs to print...</p>
+    <%  }  %>
+    </div>
+
+</body>
+</html>

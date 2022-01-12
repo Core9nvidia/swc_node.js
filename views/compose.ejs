@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            float:right;
+        }
+        nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(156, 150, 150);
+        }
+
+        li a {
+            color: rgba(255, 255, 255, 0.644);
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+            text-decoration: none;
+        }
+        #items{
+            margin-right: 40px;
+        }
+        #name{
+            color: rgba(255, 255, 255, 0.644);
+            text-align: center;
+            padding: 14px 16px;
+            margin-left: 20px;
+            text-decoration: none;
+            float:left;
+            font-size: larger;
+        }
+        .form{
+            margin:auto;
+            font-size: larger;
+            align-items: center;
+            padding: 140px;
+        }
+        input{
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        label{
+            position:relative;
+        }
+        input[textarea]{
+            height: 140px;
+        }
+        button{
+            align-items: center;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div id="name" >DAILY JOURNAL</div>
+        <div id="items" class="flex">
+            <ul>
+                <li><a href='/'>HOME</a></li>
+                <li><a href='/about'>ABOUT US</a></li>
+                <li><a href='/contact'>CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="form">
+        <form action="/" method="POST">
+            <label for="fname">Title</label><br>
+            <input type="text" id="fname" name="title" placeholder="title..">
+            <br>
+            <label for="fname">Blog content</label><br>
+            <input type="textarea" id="fname" name="body" placeholder="Body of the blog....">
+            <br>
+            <button>Submit</button>
+        </form>    
+    </div>
+    
+</body>
+</html>
